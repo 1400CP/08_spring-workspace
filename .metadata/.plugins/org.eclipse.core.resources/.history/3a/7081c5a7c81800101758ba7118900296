@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 
+		* root-conext.xml
+		서버구동과 동시에 web.xml을 거쳐서 바로 로딩되는 문서
+		=> 바로 셋팅해야 되는 내용들을 작성
+			주로 db연결 설정, 트랜젝션 처리, 내외부 모듈 연동 등등
+	 -->
+	 
+	 <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+	 	
+	 
+	 </bean>
+	
+</beans>

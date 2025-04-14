@@ -1,0 +1,27 @@
+package com.kh.spring.member.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller // Controller 타입의 어노테이션을 붙여주면 bean 스캐닝을 통해 자동으로 bean 등록
+public class MemberController {
+
+	@RequestMapping(value="login.me") // RequestMapping 타입의 어노테이션
+	public void loginMember() {
+		
+		
+	}
+	
+	@RequestMapping(value="insert.me")
+	public void insertMember() {
+		
+		
+	}
+	
+	public void updateMember() {
+		
+		
+	}
+	
+
+}

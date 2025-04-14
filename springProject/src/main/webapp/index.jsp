@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	this is index.jsp
+	<jsp:forward page="WEB-INF/views/main.jsp" />
+	바로 메인으로 출격해
 
 </body>
 </html>

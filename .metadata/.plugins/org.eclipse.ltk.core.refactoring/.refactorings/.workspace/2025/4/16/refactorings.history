@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/springProject/src/main/webapp/WEB-INF/views/common/메뉴바.html" element2="/springProject/src/main/webapp/WEB-INF/views/common/에러페이지.html" element3="/springProject/src/main/webapp/WEB-INF/views/common/푸터바.html" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1744595629474"/>&#x0A;<refactoring comment="Delete resource &apos;Servers&apos;" deleteContents="true" description="Delete resource &apos;Servers&apos;" element1="/Servers" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1744595866005"/>
+</session>
