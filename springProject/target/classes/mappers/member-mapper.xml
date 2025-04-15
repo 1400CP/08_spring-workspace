@@ -18,6 +18,7 @@
 </resultMap>
 	
 	<select id="loginMember" resultMap="memberResult" >
+	<!-- 암호화 전 방식.
 		select
 		      user_id
 		    , user_pwd
@@ -34,9 +35,49 @@
 		where status='Y'
 		and user_id = #{userId}
 		and user_pwd = #{userPwd}
+	-->
+			select
+		      user_id
+		    , user_pwd
+		    , user_name
+		    , email
+		    , gender
+		    , age
+		    , phone
+		    , address
+		    , enroll_date
+		    , modify_date
+		    , status
+		from member
+		where status='Y'
+		and user_id = #{userId}
 	</select>
 	
-	
+	<insert id="insertMember">
+		insert
+			into member
+			(
+			  user_id
+			, user_Pwd
+			, user_name
+			, email
+			, gender
+			, age
+			, phone
+			, address
+			)
+		values
+			(
+			  #{userId}
+			, #{userPwd}
+			, #{userName}
+			, #{email}
+			, #{gender}
+			, #{age}
+			, #{phone}
+			, #{address} 
+			)
+	</insert>
 	
 	
 	

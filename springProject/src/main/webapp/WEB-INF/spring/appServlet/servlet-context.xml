@@ -29,8 +29,6 @@
 		
 		1. 요청할 때마다 실행될 Controller 클래스들이 bean으로 등록되어있어야 함.
 		2. 어떤 url로 요청시 어떤 Controller 구동시킬 건지 매핑 HandlerMapping과 관련한 클래스를 bean으로 등록해야 함
-		
-	
 	 -->
 	<!-- 
 		// 1번

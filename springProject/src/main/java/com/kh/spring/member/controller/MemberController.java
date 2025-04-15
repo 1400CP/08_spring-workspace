@@ -5,10 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.kh.spring.member.model.service.MemberServiceImpl;
 import com.kh.spring.member.model.vo.Member;
@@ -18,24 +20,29 @@ public class MemberController {
 	
 	@Autowired // DI (Dependency Injection) 특징
 	private MemberServiceImpl mService; // Spring 기능 생성
+	// 필드부 개념으로 전역변수를 생성한다. 따라서 [접근제한자]가 필요함.
+	// 1. MemberServiceImpl이 스프링으로 등록되어 있어야 함.
+	// 2. @Autowired 등록되어있어야 함. (어노테이션 Autowired 타입) => spring에서 주입 가능
+	
+	@Autowired
+	private BCryptPasswordEncoder bcryptPasswordEncoder;
+	
+	
 	
 	/*
 	// RequestMapping 타입의 어노테이션을 붙여줌으로써 HanlerMapping 효과
 	@RequestMapping(value="login.me")
 	public void loginMember() {
-		
-		
+
 	}
 	
 	@RequestMapping(value="insert.me")
 	public void insertMember() {
-		
-		
+
 	}
 	
 	public void updateMember() {
-		
-		
+
 	}
 	*/
 	
@@ -45,9 +52,7 @@ public class MemberController {
 	 * 	1. HttpServletRequest를 이용해서 전달받기 (기존의 jsp/servlet 때 방식)
 	 * 		해당 메소드의 매개변수로 HttpServletRequest를 작성해두면
 	 * 		스프링 컨테이너가 해당 메소드 호출시(실행시) 자동으로 객체를 생성해서 인자로 주입해줌
-	 */
-	
-	/*
+
 	@RequestMapping("login.me")
 	public String loginMember(HttpServletRequest request) {
 		String userId = request.getParameter("id");
@@ -63,9 +68,7 @@ public class MemberController {
 	/*
 	 * 2. @RequestParam 어노테이션을 이용하는 방버
 	 * 		request.getparameter("키") : 밸류의 역할을 대신해주는 어노테이션
-	 */
 
-	/*
 	@RequestMapping("login.me")
 	public String loginMember( @RequestParam(value="id", defaultValue = "aaa") String userId, 
 								@RequestParam(value="pwd") String userPwd) {
@@ -79,9 +82,7 @@ public class MemberController {
 	/*
 	 * 3. @RequestParam 어노테이션을 생략하는 방법
 	 * 	*** 단, 매개변수명은 jsp의 name값과 동일하게 셋팅해줘야 자동으로 값이 주입된다.
-	 */
-	
-	/*
+
 	@RequestMapping("login.me")
 	public String loginMember(String id, String pwd) {
 		// 반드시 jsp의 name과 같은 값으로 넣어야 한다.
@@ -104,9 +105,7 @@ public class MemberController {
 	 *		스프링 컨테이너가 해당 객체를 기본생성자로 생성 후 setter 메소드를 찾아서
 	 *		요청시 전달값을 해당 필드에 담아주는 내부적인 원리
 	 *		** 반드시 name 속성값(키값)과 담고자하는 필드명 동일해야 함.
-	 */
-	
-	/*
+
 	@RequestMapping("login.me")
 	public String loginMember(Member m) {
 		// jsp에서 name값을 Member vo랑 맞춰서 적어야 한다.
@@ -129,23 +128,109 @@ public class MemberController {
 	 * 	포워딩할 뷰로 전달하고자 하는 데이터를 맵형식(key-value)으로 담을 수 있는 영역
 	 * 	Model 객체는 requestScope이다.
 	 * 	단, setAttribute()가 아닌 addAttribute() 메소드 이용
-	 * 	
-	 */
-	
+	 
 	@RequestMapping("login.me")
 	public String loginMember(Member m, Model model, HttpSession session) {
-		
+		// 알아서 매개변수의 내용에서 new 객체 생성. => DI의 특징
 		Member loginUser = mService.loginMember(m);
 		
 		if(loginUser == null) { // 로그인 실패 => 에러페이지로 포워딩
 			model.addAttribute("errorMsg", "로긴실패"); 
-			return "common/errorPage";
+			return "common/errorPage"; // /WEB-INF/views/ xxxx. /jsp 자동으로 해줌.
 		}else { // 로그인 성공 => loginUser를 sessionScope에 담고, 메인페이지로 url 재요청
 			session.setAttribute("loginUser", loginUser);
 			return "redirect:/";
 		}
 
 	}
-	// return "main"이 가능했던 이유는 servlet-context.xml덕분이었다.
+	*/
+	
+	/*
+	 * 2. 스프링에서 제공하는 ModelAndView 객체를 이용하는 방법
+	 * 
+	 * 	Model 데이터를 Key-value 세트로 담을 수 있는 공간이라고 한다면
+	 * 	View는 응답뷰에 대한 정보를 담을 수 있는 공간
+	 */
+	
+	@RequestMapping("login.me")
+	/*
+	public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) { // import처리
+		// 알아서 매개변수의 내용에서 new 객체 생성. => DI의 특징
+		Member loginUser = mService.loginMember(m);
+		
+		if(loginUser == null) { // 로그인 실패 => 에러페이지로 포워딩
+			mv.addObject("errorMsg", "로긴실패");
+			mv.setViewName("common/errorPage");
+		}else { // 로그인 성공 => loginUser를 sessionScope에 담고, 메인페이지로 url 재요청
+			session.setAttribute("loginUser", loginUser);
+			mv.setViewName("redirect:/");
+		}
+		return mv;
+	}
+	*/
+	
+	// 암호화 작업 후 해야 하는 과정
+	// Member m userId 필드 : 사용자가 입력한 Id
+	//			userPwd 필드 : 사용자가 입력한 비번(평문)
+	public ModelAndView loginMember(Member m, HttpSession session, ModelAndView mv) {
+		Member loginUser = mService.loginMember(m);
+		// loginUser : 오로지 아이디만을 가지고 조회한 회원
+		// loginUser userPwd 필드 : db에 기록된 비번(암호문)
+		
+		if(loginUser != null && bcryptPasswordEncoder.matches(m.getUserPwd(), loginUser.getUserPwd())) {
+			// 로그인 성공
+			session.setAttribute("loginUser", loginUser);
+			mv.setViewName("redirect:/");
+		}else { // 실패
+			mv.addObject("errorMsg", "로긴실패");
+			mv.setViewName("common/errorPage");
+		}
+		return mv;
+	}
+	
+	@RequestMapping("logout.me")
+	public String logoutMember(HttpSession session) {
+		session.invalidate(); // invalidate() 모든 것을 무력화
+		return "redirect:/";
+	}
+	
+	@RequestMapping("enrollForm.me")
+	public String enrollForm() {
+		// /WEB-INF/views/  member/memberEnrollForm  .jsp 로 포워딩
+		return "member/memberEnrollForm";
+	}
+	
+	@RequestMapping("insert.me")
+	public String insertMember(Member m, Model model, HttpSession session) {
+		// 1. 한글 깨짐 == 스프링에서 제공하는 인코딩필터 등록(mybatis와 같이 filter 등록)
+		// 2. 나이를 입력하지 않았을 경우, "" 빈문자열이 넘어오는데 int형 필드에 담을 수 없다. 400error 발생.
+		//	=> Member 클래스의 age필드를 int형 => String형으로 변경 => vo 변경.
+		// 3. 비밀번호가 사용자가 입력한 있는 그대로의 평문
+		// 	=> Bcrypt 방식의 암호화를 통해서 암호문으로 변경
+		// 	=> 1) 스프링 시큐리티 모듈에서 제공 (라이브러리 추가 pom.xml)
+		//	=> 2) BcryptPasswordEncoder 라는 클래스를 bean으로 등록(xml 파일에)
+		//	=> 3) web.xml에 spring-security.xml 파일을 pre-loading 할 수 있도록 작성
+		
+		// 암호화 작업(암호문을 만들어내는 과정)
+		String encPwd = bcryptPasswordEncoder.encode(m.getUserPwd());
+		
+		m.setUserPwd(encPwd); // Member객체의 userPwd에 암호문으로 변경
+		
+		int result = mService.insertMember(m);
+		
+		if(result > 0) { // 모델 선언으로. 메인페이지 url 재요청
+			session.setAttribute("alertMsg", "회원가입성공");
+			return "redirect:/";
+		}else { // 에러문구 담아서 에러페이지
+			model.addAttribute("errorMsg", "회원가입실패");
+			return "common/errorPage";
+		}
+		
+	}
+	
+	@RequestMapping("myPage.me")
+	public String myPage() {
+		return "member/myPage";
+	}
 
 }
