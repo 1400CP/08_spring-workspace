@@ -1,0 +1,29 @@
+package com.kh.spring.board.model.dao;
+
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.kh.spring.board.model.vo.Board;
+import com.kh.spring.common.model.vo.PageInfo;
+
+@Repository
+// Spring이 관리
+public class BoardDao {
+	
+	public int selectListCount(SqlSession sqlSession) {
+		return sqlSession.selectOne("boardMapper.selectListCount");
+	}
+	
+	public ArrayList<Board> selectList(SqlSession sqlSession, PageInfo pi) {
+		
+		int offset = (pi.getCurrentPage() -1) * pi.getBoardLimit();
+		int limit = 
+		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectList", pi);
+	
+	
+	}
+
+}

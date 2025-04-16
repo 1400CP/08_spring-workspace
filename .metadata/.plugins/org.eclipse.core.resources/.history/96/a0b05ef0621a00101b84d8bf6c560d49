@@ -1,0 +1,15 @@
+package com.kh.spring.board.model.vo;
+
+public class Board {
+	
+	private int boardNo;
+	private String boardTitle;
+	private String boardWriter;
+	private String boardContent;
+	private String originName;
+	private String changeName; // "resources/uploadFiles/xxxx.jpg"
+	private int count; // 자동으로 들어가는 것이라서 상관없음
+	private Date CreateDate;
+	private String status;
+
+}

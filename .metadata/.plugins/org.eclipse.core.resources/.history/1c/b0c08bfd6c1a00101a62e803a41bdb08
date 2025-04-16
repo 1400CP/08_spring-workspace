@@ -1,0 +1,13 @@
+package com.kh.spring.board.model.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+// Spring이 관리
+public class BoardDao {
+	
+	public int selectListCount(SqlSession session) {
+		
+	}
+
+}

@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Apr 2025 00:36:07 GMT</lastBuildDate><item><title><![CDATA[Prompt Engineering Techniques with Spring AI]]></title><link>https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns</link><guid isPermaLink="true">https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns</guid><dc:creator><![CDATA[tzolov]]></dc:creator><pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This blog post demonstrates practical implementations of Prompt Engineering techniques using &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/index.html&quot;&gt;Spring AI&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Apr 2025 00:36:40 GMT</lastBuildDate><item><title><![CDATA[This Week in Spring - April 15th, 2025]]></title><link>https://spring.io/blog/2025/04/15/this-week-in-spring-april-15th-2025</link><guid isPermaLink="true">https://spring.io/blog/2025/04/15/this-week-in-spring-april-15th-2025</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Tue, 15 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.io/blog/2025/04/10/spring-ai-1-0-0-m7-released&quot;&gt;Spring AI M7 is here!&lt;/a&gt; This new release includes a bunch of awesome new features! And some refactorings. Notably that the Spring AI auto-configuration has changed from a single monolithic artifact to individual auto-configuration artifacts per model, vector store, and other components. This change was made to minimize the impact of different versions of dependent libraries conflicting, such as Google Protocol Buffers, Google RPC, and others. By separating auto-configuration into component-specific artifacts, you can avoid pulling in unnecessary dependencies and reduce the risk of version conflicts in your application. In additon some of the names of the starters have been changed:  Model starters: &lt;code&gt;spring-ai-{model}-spring-boot-starter&lt;/code&gt; ¡æ &lt;code&gt;spring-ai-starter-model-{model}&lt;/code&gt;. Vector Store starters: &lt;code&gt;spring-ai-{store}-store-spring-boot-starter&lt;/code&gt; ¡æ &lt;code&gt;spring-ai-starter-vector-store-{store}&lt;/code&gt;. MCP starters: &lt;code&gt;spring-ai-mcp-{type}-spring-boot-starter&lt;/code&gt; ¡æ &lt;code&gt;spring-ai-starter-mcp-{type}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Want to learn about Spring, MCP, and more? Check out this talk that Spring AI founder and lead Dr. Mark Pollack and &lt;a href=&quot;https://www.youtube.com/watch?v=uPWebxgEwlE&quot;&gt;I gave at Devnexus 2025 just a month and some change ago&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;READ THIS!&lt;/em&gt; This blog post by Spring AI lead Christian Tsolov explains some of the patterns in Google&apos;s new &lt;em&gt;Prompt Engineering&lt;/em&gt; whitepaper in terms &lt;a href=&quot;https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns&quot;&gt;of Spring AI&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Speaking of Christian&apos;s blog, I did a quick two-minute &lt;a href=&quot;https://www.youtube.com/shorts/B1dan9IWph0&quot;&gt;digest of the blog and the patterns here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In last week&apos;s installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, I had the privilege to &lt;a href=&quot;https://spring.io/blog/2025/04/10/a-bootiful-podcast-wiremock&quot;&gt;talk to WireMock&apos;s Lee Turner and Tom Akehurst&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Community legend Edd? Mel?ndez put together a great blog on the new &lt;a href=&quot;https://spring.io/blog/2025/04/10/spring-ai-docker-model-runner&quot;&gt;support for Docker Model Runner in Spring AI&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.io/blog/2025/04/08/spring-cloud-2025-0-0-m3-released&quot;&gt;Spring Cloud 2025.0.0-M3 (aka Northfield) has been released&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Have you booked your ticket for the upcoming &lt;a href=&quot;https://2025.springio.net&quot;&gt;Spring I/O 2025 event in beautiful Barcelona, Spain&lt;/a&gt;? Don&apos;t miss it! There will be tons of amazing sessions. One that I&apos;m especially looking forward to is Anton Arhipov&apos;s talk, &lt;a href=&quot;https://2025.springio.net/sessions/el-rapido-coding-like-josh-long/&quot;&gt;&lt;em&gt;El Rapido! Coding Like Josh Long&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;My recorded talk, &lt;em&gt;Bootiful Spring Boot: A DOGumentary&lt;/em&gt;, from 2024&apos;s YOW! conference (well, one of the stops on the tour, anyway) is now &lt;a href=&quot;https://www.youtube.com/watch?v=NMPf373dzvM&quot;&gt;available online&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Here&apos;s an MCP service &lt;a href=&quot;https://github.com/brunoborges/jvm-diagnostics-mcp&quot;&gt;you can use to get JVM diagnostics&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I&apos;m very curious about A2A (Agent2Agent), a new MCP orchestration proposal from Google. I also talked about &lt;a href=&quot;https://www.youtube.com/shorts/s8IvsUJ9b0s&quot;&gt;it in a quick YouTube short here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Build WebAssembly from Java? Yes, it&apos;s possible (though not quite practical yet)! Check out this quick look at how to build WebAssembly &lt;a href=&quot;https://www.youtube.com/shorts/VqhO3AkB-2M&quot;&gt;applications with Java using GraalVM for Java 25 early access&lt;/a&gt;. There are caveats, so this won¡¯t be typical for Spring apps anytime soon?but the horizon seems closer than ever!&lt;/li&gt;
+&lt;li&gt;Want to learn all about MCP? &lt;a href=&quot;https://www.youtube.com/watch?v=cE1h-rC2o2U&amp;#x26;t=1s&quot;&gt;Check out this video I did a month ago&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I loved Neo4j¡¯s Michael Hunger¡¯s explanation: &lt;a href=&quot;https://neo4j.com/blog/developer/model-context-protocol/&quot;&gt;&lt;em&gt;Everything a Developer Needs to Know About the Model Context Protocol (MCP) - Graph Database &amp;#x26; Analytics&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/apappascs/spring-ai-examples/tree/main/spring-ai-deepseek&quot;&gt;Want to use the DeepSeek model with Spring AI? Read on!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Stephan Janssen, creator of Devoxx, just released a &lt;a href=&quot;https://x.com/Stephan007/status/1910640447740838356?s=12&quot;&gt;100% Java GitHub MCP application built on Spring AI&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Speaking of MCP, our very own Mahmoud Ben Hassine, lead of the Spring Batch project, put together &lt;a href=&quot;https://github.com/fmbenhassine/spring-batch-lab/tree/main/sandbox/spring-batch-mcp-server&quot;&gt;an MCP service for introspecting a Spring Batch application?&lt;em&gt;awesome&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Prompt Engineering Techniques with Spring AI]]></title><link>https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns</link><guid isPermaLink="true">https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns</guid><dc:creator><![CDATA[tzolov]]></dc:creator><pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This blog post demonstrates practical implementations of Prompt Engineering techniques using &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/index.html&quot;&gt;Spring AI&lt;/a&gt;.&lt;/p&gt;
 &lt;img style=&quot;float: right; display: block; margin: auto;&quot; src=&quot;https://raw.githubusercontent.com/spring-projects/spring-ai-examples/refs/heads/main/prompt-engineering/prompt-engineering-patterns/prompt-engineering-spring-ai.png&quot; width=&quot;300&quot;&gt;
 &lt;p&gt;The examples and patterns in this article are based on the comprehensive &lt;a href=&quot;https://www.kaggle.com/whitepaper-prompt-engineering&quot;&gt;Prompt Engineering Guide&lt;/a&gt; that covers the theory, principles, and patterns of effective prompt engineering.&lt;/p&gt;
 &lt;p&gt;The blog shows how to translate those concepts into working Java code using Spring AI&apos;s fluent &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/chatclient.html&quot;&gt;ChatClient API&lt;/a&gt;.&lt;/p&gt;
@@ -1017,191 +1035,4 @@ spring.ai.openai.chat.options.model=ai/gemma3
 &lt;li&gt;&lt;a href=&quot;https://github.com/yeseong0412&quot;&gt;¾ç¿¹¼º (yeseong0412)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/799332391&quot;&gt;áËÕ¦ (799332391)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/He-Pin&quot;&gt;ûÛ? (He-Pin)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring AI with Docker Model Runner]]></title><link>https://spring.io/blog/2025/04/10/spring-ai-docker-model-runner</link><guid isPermaLink="true">https://spring.io/blog/2025/04/10/spring-ai-docker-model-runner</guid><dc:creator><![CDATA[markpollack]]></dc:creator><pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
-&lt;p&gt;This blog post is authored by &lt;a href=&quot;https://github.com/eddumelendez&quot;&gt;Edd? Mel?ndez&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Docker recently &lt;a href=&quot;https://www.docker.com/blog/docker-desktop-4-40/&quot;&gt;released a Model Runner in Docker Desktop for Mac 4.40.0&lt;/a&gt; on Apple silicon. The Docker Model Runner provides a local Inference API designed to be compatible with the OpenAI API, enabling easy integration with &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/chat/dmr-chat.html&quot;&gt;Spring AI&lt;/a&gt; as part of the Spring AI 1.0.0-M7 release. Models are distributed as standard OCI artifacts on Docker Hub under the &lt;a href=&quot;https://hub.docker.com/u/ai&quot;&gt;ai namespace&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;prerequisites&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#prerequisites&quot; aria-label=&quot;prerequisites permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Prerequisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Download Docker Desktop for Mac 4.40.0.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Choose one of the following options to enable the Model Runner:&lt;/p&gt;
-&lt;p&gt;Option 1:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Enable Model Runner `docker desktop enable model-runner --tcp 12434`.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Set the base-url to `&lt;a href=&quot;http://localhost:12434/engines%5C%60&quot;&gt;http://localhost:12434/engines\`&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Option 2:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Enable Model Runner `docker desktop enable model-runner`.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use &lt;a href=&quot;https://testcontainers.com/&quot;&gt;Testcontainers&lt;/a&gt; and set the base-url as follows:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Container
-private static final SocatContainer socat = new SocatContainer().withTarget(80, &quot;model-runner.docker.internal&quot;);
-
-@Bean
-public OpenAiApi chatCompletionApi() {
-	var baseUrl = &quot;http://%s:%d/engines&quot;.formatted(socat.getHost(), socat.getMappedPort(80));
-	return OpenAiApi.builder().baseUrl(baseUrl).apiKey(&quot;test&quot;).build();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, pull the model `docker model pull ai/gemma3` and confirm it is available locally `docker model list`&lt;/p&gt;
-&lt;h2 id=&quot;dependencies&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#dependencies&quot; aria-label=&quot;dependencies permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dependencies&lt;/h2&gt;
-&lt;p&gt;Go to start.spring.io, select Spring Web, OpenAI and Testcontainers and generate the project.&lt;/p&gt;
-&lt;p&gt;The following dependencies must be listed&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#x3C;dependency&gt;
-	&amp;#x3C;groupId&gt;org.springframework.boot&amp;#x3C;/groupId&gt;
-	&amp;#x3C;artifactId&gt;spring-boot-starter-web&amp;#x3C;/artifactId&gt;
-&amp;#x3C;/dependency&gt;
-&amp;#x3C;dependency&gt;
-	&amp;#x3C;groupId&gt;org.springframework.ai&amp;#x3C;/groupId&gt;
-	&amp;#x3C;artifactId&gt;spring-ai-openai-spring-boot-starter&amp;#x3C;/artifactId&gt;
-&amp;#x3C;/dependency&gt;
-
-&amp;#x3C;dependency&gt;
-	&amp;#x3C;groupId&gt;org.springframework.ai&amp;#x3C;/groupId&gt;
-	&amp;#x3C;artifactId&gt;spring-ai-spring-boot-testcontainers&amp;#x3C;/artifactId&gt;
-	&amp;#x3C;scope&gt;test&amp;#x3C;/scope&gt;
-&amp;#x3C;/dependency&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Also, make sure the Spring AI BOM is present&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;#x3C;dependencyManagement&gt;
-	&amp;#x3C;dependencies&gt;
-		&amp;#x3C;dependency&gt;
-			&amp;#x3C;groupId&gt;org.springframework.ai&amp;#x3C;/groupId&gt;
-			&amp;#x3C;artifactId&gt;spring-ai-bom&amp;#x3C;/artifactId&gt;
-			&amp;#x3C;version&gt;${spring-ai.version}&amp;#x3C;/version&gt;
-			&amp;#x3C;type&gt;pom&amp;#x3C;/type&gt;
-			&amp;#x3C;scope&gt;import&amp;#x3C;/scope&gt;
-		&amp;#x3C;/dependency&gt;
-	&amp;#x3C;/dependencies&gt;
-&amp;#x3C;/dependencyManagement&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Configuring Spring AI&lt;/p&gt;
-&lt;p&gt;To use Docker Model Runner, we need to configure the OpenAI client to point to the right endpoint and use the model pulled earlier&lt;/p&gt;
-&lt;p&gt;For Option 1: Let¡¯s configure the src/main/resources/application.properties&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;spring.ai.openai.api-key=ignored
-spring.ai.openai.base-url=http://localhost:12434/engines
-spring.ai.openai.chat.options.model=ai/gemma3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For Option 2 (Using Testcontainers): Let¡¯s go to `TestcontainersConfiguration`, define the SocatContainer bean and register the properties with `DynamicPropertyRegistrar` bean.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
-
-    @Bean
-    SocatContainer socat() {
-        return new SocatContainer(DockerImageName.parse(&quot;alpine/socat:1.8.0.1&quot;))
-                .withTarget(80, &quot;model-runner.docker.internal&quot;);
-    }
-    
-    @Bean
-    DynamicPropertyRegistrar properties(SocatContainer socat) {
-        return (registrar) -&gt; {
-            registrar.add(&quot;spring.ai.openai.base-url&quot;, () -&gt; &quot;http://%s:%d/engines&quot;.formatted(socat.getHost(), socat.getMappedPort(80)));
-            registrar.add(&quot;spring.ai.openai.api-key&quot;, () -&gt; &quot;test-api-key&quot;);
-            registrar.add(&quot;spring.ai.openai.chat.options.model&quot;, () -&gt; &quot;ai/gemma3&quot;);
-        };
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;chat-example&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#chat-example&quot; aria-label=&quot;chat example permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chat example&lt;/h2&gt;
-&lt;p&gt;Now, let¡¯s create a simple controller&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@RestController
-public class ChatController {
-
-    private final ChatClient chatClient;
-
-    public ChatController(ChatClient.Builder chatClientBuilder) {
-        this.chatClient = chatClientBuilder.build();
-    }
-
-    @GetMapping(&quot;/chat&quot;)
-    public String chat(@RequestParam String message) {
-        return this.chatClient.prompt()
-                .user(message)
-                .call()
-                .content();
-    }
-
-   @GetMapping(&quot;/chat-stream&quot;)
-    public Flux&amp;#x3C;String&gt; chatStream(@RequestParam String message) {
-        return this.chatClient.prompt()
-                .user(message)
-                .stream()
-                .content();
-    }
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run the application with `./mvnw spring-boot:test-run`&lt;/p&gt;
-&lt;p&gt;Using &lt;a href=&quot;https://httpie.io/&quot;&gt;httpie&lt;/a&gt;, let¡¯s call to the `/chat` endpoint&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http :8080/chat message==&quot;tell me a joke&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We can also call to the `/chat-stream` endpoint&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http :8080/chat-stream message==&quot;tell me a haiku about docker containers&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;tool-example&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tool-example&quot; aria-label=&quot;tool example permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tool example&lt;/h2&gt;
-&lt;p&gt;Docker Model Runner of course supports tool calling if used with a model that supports tool calling.&lt;/p&gt;
-&lt;p&gt;Create a `FunctionCallConfig` class and add a simple function&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Configuration(proxyBeanMethods = false)
-class FunctionCallConfig {
-
-    @Bean
-    @Description(&quot;Get the stock price&quot;)
-    public Function&amp;#x3C;MockStockService.StockRequest, MockStockService.StockResponse&gt; stockFunction() {
-        return new MockStockService();
-    }
-
-    static class MockStockService implements Function&amp;#x3C;MockStockService.StockRequest, MockStockService.StockResponse&gt; {
-
-        public record StockRequest(String symbol) {}
-        public record StockResponse(double price) {}
-
-        @Override
-        public StockResponse apply(StockRequest request) {
-            double price = request.symbol().contains(&quot;AAPL&quot;) ? 198 : 114;
-            return new StockResponse(price);
-        }
-    }
-    
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, let¡¯s register `stockFunction` function&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@GetMapping(&quot;/stocks&quot;)
-public String stocks(@RequestParam String message) {
-    return this.chatClient.prompt()
-            .user(message)
-            .tools(&quot;stockFunction&quot;)
-            .call()
-            .content();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run the application `./mvnw spring-boot:test-run` and call the `/stocks` endpoint&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http :8080/stocks message==&quot;What&apos;s AAPL and NVDA stock price?&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The response should be something like `AAPL stock price is 198.0 and NVDA stock price is 114.0.` based on the hardcoded values we set.&lt;/p&gt;
-&lt;h2 id=&quot;references&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#references&quot; aria-label=&quot;references permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;h1 id=&quot;introducing-docker-model-runner-httpswwwdockercomblogintroducing-docker-model-runner&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#introducing-docker-model-runner-httpswwwdockercomblogintroducing-docker-model-runner&quot; aria-label=&quot;introducing docker model runner httpswwwdockercomblogintroducing docker model runner permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introducing Docker Model Runner &lt;a href=&quot;https://www.docker.com/blog/introducing-docker-model-runner/&quot;&gt;https://www.docker.com/blog/introducing-docker-model-runner/&lt;/a&gt;&lt;/h1&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Run LLMs Locally with Docker: A Quickstart Guide to Model Runner &lt;a href=&quot;https://www.docker.com/blog/run-llms-locally/&quot;&gt;https://www.docker.com/blog/run-llms-locally/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Docker Model Runner docs &lt;a href=&quot;https://docs.docker.com/desktop/features/model-runner/&quot;&gt;https://docs.docker.com/desktop/features/model-runner/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring AI Docker Model Runner Example &lt;a href=&quot;https://github.com/eddumelendez/spring-ai-dmr&quot;&gt;https://github.com/eddumelendez/spring-ai-dmr&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Docker Model Runner allows you to iterate faster, stay local and access an OpenAI-compatible API. It streamlines the development experience by enabling seamless integration with Spring AI¡¯s OpenAI module, letting developers stay within their familiar inner-loop tooling. This empowers teams to build and test AI applications at their own pace?locally, securely, and efficiently. In the future, integration with Testcontainers will make it even easier to pull and run models on demand, further simplifying setup and testing workflows.Docker Model Runner allows you to iterate faster, stay local and access an OpenAI-compatible API. It streamlines the development experience by enabling seamless integration with Spring AI¡¯s OpenAI module, letting developers stay within their familiar inner-loop tooling. This empowers teams to build and test AI applications at their own pace?locally, securely, and efficiently.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>

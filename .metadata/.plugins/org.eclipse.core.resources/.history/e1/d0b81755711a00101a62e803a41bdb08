@@ -1,0 +1,34 @@
+package com.kh.spring.board.model.dao;
+
+import java.util.ArrayList;
+
+import org.apache.ibatis.session.RowBounds;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.kh.spring.board.model.vo.Board;
+import com.kh.spring.common.model.vo.PageInfo;
+
+@Repository
+// Spring이 관리
+public class BoardDao {
+	
+	public int selectListCount(SqlSession sqlSession) {
+		return sqlSession.selectOne("boardMapper.selectListCount");
+	}
+	
+	public ArrayList<Board> selectList(SqlSession sqlSession, PageInfo pi) {
+		// 건너뛰고 가져올 개수(자료)
+		int offset = (pi.getCurrentPage() -1) * pi.getBoardLimit();
+		// 가져올 자료개수
+		int limit = pi.getBoardLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		
+		// 이미 완벽한 mapper인 경우 null을 적고, rowBounds를 리턴한다.
+		return (ArrayList)sqlSession.selectList("boardMapper.selectList", null, rowBounds);
+	
+	
+	}
+
+}

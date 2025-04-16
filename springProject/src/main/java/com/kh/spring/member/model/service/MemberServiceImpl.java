@@ -21,6 +21,11 @@ public class MemberServiceImpl implements MemberService {
 	public Member loginMember(Member m) {
 		return mDao.loginMember(sqlSession, m);
 	}
+	
+	@Override
+	public String loginMember(String userId) {
+		return mDao.loginMember(sqlSession, userId);
+	}
 
 	@Override
 	public int insertMember(Member m) {
@@ -29,12 +34,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int updateMember(Member m) {
-		return 0;
+		int result = mDao.updateMember(sqlSession, m);
+		return result;
 	}
 
 	@Override
 	public int deleteMember(String userId) {
-		return 0;
+		return mDao.deleteMember(sqlSession, userId);
 	}
 
 	@Override
