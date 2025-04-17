@@ -50,5 +50,11 @@
 	  	property : setter 주입
 	  	constructor-arg : 생성자 주입
 	   -->
+	   
+	   <!-- 파일업로드 관련 빈 등록 -->
+	   <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+	   		<property name="maxUploadSize" value="10000000"/>
+	   		<property name="maxInMemorySize" value="10000000"/>
+	   </bean>
 	
 </beans>
