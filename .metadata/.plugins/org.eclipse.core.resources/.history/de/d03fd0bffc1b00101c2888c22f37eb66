@@ -1,0 +1,7 @@
+package com.kh.opendata.model.vo;
+
+public class AirVO {
+	
+	private String stationName; // 측정소 명칭
+	
+}

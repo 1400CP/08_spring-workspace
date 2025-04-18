@@ -3,6 +3,8 @@
 	<name>Servers</name>
 	<comment></comment>
 	<projects>
+		<project>ajaxProject</project>
+		<project>springProject</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

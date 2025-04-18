@@ -97,4 +97,13 @@
 		where user_id = #{userId}
 	</delete>
 	
+	<select id="idCheck" resultType="_int">
+		select
+			  count(*)
+		  from
+		  	  member
+	  	  where
+	  	  	  user_id = #{checkId}
+	</select>
+	
 </mapper>

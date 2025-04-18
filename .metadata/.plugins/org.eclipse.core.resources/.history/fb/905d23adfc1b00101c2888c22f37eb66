@@ -1,0 +1,5 @@
+package com.kh.opendata.model.vo;
+
+public class AirVO {
+	
+}

@@ -1,0 +1,101 @@
+package com.kh.opendata.controller;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class APIController {
+	
+	private static final String serviceKey = "7X77em5gX4WgOrWP3owuijw1JS%2BIWxvqscOFW048IKzYlOQWRp%2F%2F%2F081v0JpvR0y21MjEvM0ZW7Sk%2BiSihX0UA%3D%3D";
+
+	@ResponseBody
+	@RequestMapping(value="air.do", produces="text/xml; charset=utf-8") // 확실하게 처리하는 방법(Value="")
+	// xml인 경우 produces="" 을 반드시 적어야한다!
+	public String airPollution(String location) throws IOException {
+		String url = "https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
+		url += "?serviceKey=" + serviceKey;
+		url += "&sidoName=" + URLEncoder.encode(location, "UTF-8"); // add throws IOException
+		url += "&returnType=xml";
+		url += "&numOfRows=50";
+	
+		URL requestUrl = new URL(url);
+		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
+		// 타입이 안 맞아서 형변환
+		urlConnection.setRequestMethod("GET");
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+		
+		String responseText="";
+		String line;
+		while((line = br.readLine()) != null) {
+			responseText += line;
+		}
+		br.close();
+		urlConnection.disconnect();
+		
+		return responseText;
+		// *** json 타입으로 바꿔서 줘야합니다.
+		// 그리고 Spring에서는 @으로 바꿔야 합니다. (포워딩이 아닙니다)
+	}
+	
+	/* json인 경우
+	@ResponseBody
+	@RequestMapping(value="air.do", produces="application/json; charset=utf-8") // 확실하게 처리하는 방법(Value="")
+	// json에서는 반드시 produces="" 저렇게 써야한다!!
+	public String airPollution(String location) throws IOException {
+		String url = "https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
+		url += "?serviceKey=" + serviceKey;
+//		url += "&sidoName=" + location; // 한글이 있어서 encoding 처리해야 함
+		url += "&sidoName=" + URLEncoder.encode(location, "UTF-8"); // add throws IOException
+		url += "&returnType=json";
+		// 추가 rownum
+		url += "&numOfRows=50";
+	
+		URL requestUrl = new URL(url);
+		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
+		// 타입이 안 맞아서 형변환
+		urlConnection.setRequestMethod("GET"); // 공식 문서를 보고 연결 방법을 확인하라.
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+		// BufferReader는 문자기반, InputStream은 바이트기반, 형변환이 필요함 new InputStreamReader
+		
+		String responseText="";
+		String line;
+		while((line = br.readLine()) != null) {
+			responseText += line; // 모든 글자가 담긴다
+		}
+		br.close();
+		urlConnection.disconnect();
+		
+		return responseText;
+		// *** json 타입으로 바꿔서 줘야합니다.
+		// 그리고 Spring에서는 @으로 바꿔야 합니다. (포워딩이 아닙니다)
+	}
+	*/
+	
+	
+	@RequestMapping(value="jd.do")
+	public String selectJd() throws IOException {
+		
+		String url = "https://apis.data.go.kr/9760000/CommonCodeService/getCommonPartyCodeList";
+		url += "?ServiceKey=" + serviceKey;
+		url += "&sgId=20231011";
+		url += "&numOfRows=10";
+		
+		URL requestUrl = new URL(url); // add throws IOException
+		HttpURLConnection urlConnection = (HttpURLConnection)requestUrl.openConnection();
+		 
+	}
+	
+	
+	
+}

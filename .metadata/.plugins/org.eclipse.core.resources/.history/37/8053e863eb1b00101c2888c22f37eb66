@@ -1,0 +1,13 @@
+package com.kh.ajax.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class AjaxController {
+	
+	@RequestMapping("ajax1.do")
+	public void ajaxMethod1(String name, int age) {
+		
+	}
+
+}

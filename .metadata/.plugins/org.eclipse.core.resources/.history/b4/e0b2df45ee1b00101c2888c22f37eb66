@@ -1,0 +1,39 @@
+package com.kh.ajax.controller;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class AjaxController {
+	/*
+	 *  1. HttpServletResponse response 객체로 응답데이터 응답하기 (기존의 jsp/servlet 때 했던 Stream을 이용한 방식)
+	 *  
+	 */
+	
+	/*
+	@RequestMapping("ajax1.do")
+//	public void ajaxMethod1(String name, int age) {
+	public void ajaxMethod1(String name, int age, HttpServletResponse response) throws IOException {
+		System.out.println(name);
+		System.out.println(age);
+		
+		// 요청처리를 위해 서비스 호출
+		
+		// 요청처리가 다 됐다는 가정하에 요청한 그 페이지에 응답할 데이터가 있을 경우?
+		String responseData = "응답 문자열 : " + name + "는" + age + "살 입니다.";
+	
+		response.setContentType("text/html; charset=utf-8");
+		response.getWriter().print(responseData); // IO 섹션을 처리하라.
+	}
+	*/
+	
+	@RequestMapping("ajax1.do")
+	public void ajaxMethod1() {
+		
+	}
+	
+}

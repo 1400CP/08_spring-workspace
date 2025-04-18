@@ -1,0 +1,10 @@
+package com.kh.ajax.controller;
+
+public class AjaxController {
+	
+	@RequestMapping("ajax1.do")
+	public void ajaxMethod1(String name, int age) {
+		
+	}
+
+}
